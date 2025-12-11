@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from app.scanner import CryptoScanner
+from Scanner.app.scanner import CryptoScanner
 import uvicorn
 import logging
 
@@ -102,5 +102,5 @@ async def shutdown_event():
     """Cleanup on application shutdown"""
     await scanner.close()
 
-if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+# if __name__ == "__main__":
+#     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
